@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>政黨觀點比較時間軸</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            height: 100%;
+            overflow: hidden;
+        }
+        .column {
+            flex: 1;
+            padding: 20px;
+            overflow-y: scroll;
+            position: relative;
+        }
+        .left {
+            background-color: #f0f0f0;
+        }
+        .center {
+            background-color: #e0e0e0;
+        }
+        .right {
+            background-color: #d0d0d0;
+        }
+        h2 {
+            text-align: center;
+            position: sticky;
+            top: 0;
+            background-color: inherit;
+            margin-top: 0;
+            padding-top: 20px;
+            z-index: 10;
+        }
+        .event {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .timeline-event {
+            display: flex;
+            align-items: center;
+            margin: 60px 0;
+            position: relative;
+        }
+        .timeline-point {
+            width: 20px;
+            height: 20px;
+            background-color: #333;
+            border-radius: 50%;
+            margin-right: 10px;
+            position: relative;
+            z-index: 2;
+        }
+        .timeline-content {
+            flex-grow: 1;
+        }
+        .party-event {
+            position: relative;
+            margin: 60px 0;
+        }
+        .timeline-line {
+            position: absolute;
+            top: 50%;
+            height: 2px;
+            background-color: #333;
+            z-index: 1;
+        }
+        .left .timeline-line {
+            right: -50px;
+            width: calc(50% + 50px);
+        }
+        .right .timeline-line {
+            left: -50px;
+            width: calc(50% + 50px);
+        }
+        .multiple-views {
+            border-left: 3px solid #007bff;
+            padding-left: 10px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column left">
+            <h2>A政黨觀點</h2>
+            <div class="party-event">
+                <div class="multiple-views">
+                    <div class="event">
+                        <h3>事件1 - 觀點1</h3>
+                        <p>A政黨關於事件1的第一個觀點：支持該政策，認為能促進經濟發展。</p>
+                    </div>
+                    <div class="event">
+                        <h3>事件1 - 觀點2</h3>
+                        <p>A政黨關於事件1的第二個觀點：但同時呼籲需要注意環境保護問題。</p>
+                    </div>
+                </div>
+                <div class="timeline-line"></div>
+            </div>
+            <div class="party-event">
+                <div class="event">
+                    <h3>事件2</h3>
+                    <p>A政黨關於事件2的觀點...</p>
+                </div>
+                <div class="timeline-line"></div>
+            </div>
+            <div class="party-event">
+                <div class="event">
+                    <h3>事件3</h3>
+                    <p>A政黨關於事件3的觀點...</p>
+                </div>
+                <div class="timeline-line"></div>
+            </div>
+            <div class="party-event">
+                <div class="event">
+                    <h3>事件4</h3>
+                    <p>A政黨關於事件4的觀點...</p>
+                </div>
+                <div class="timeline-line"></div>
+            </div>
+            <div class="party-event">
+                <div class="event">
+                    <h3>事件5</h3>
+                    <p>A政黨關於事件5的觀點...</p>
+                </div>
+                <div class="timeline-line"></div>
+            </div>
+        </div>
+        <div class="column center">
+            <h2>時間軸</h2>
+            <div class="timeline-event">
+                <div class="timeline-point"></div>
+                <div class="timeline-content">
+                    <div class="event">
+                        <h3>2023年1月1日</h3>
+                        <p>事件1：政府提出新的經濟發展政策</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-event">
+                <div class="timeline-point"></div>
+                <div class="timeline-content">
+                    <div class="event">
+                        <h3>2023年3月15日</h3>
+                        <p>事件2發生</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-event">
+                <div class="timeline-point"></div>
+                <div class="timeline-content">
+                    <div class="event">
+                        <h3>2023年6月30日</h3>
+                        <p>事件3發生</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-event">
+                <div class="timeline-point"></div>
+                <div class="timeline-content">
+                    <div class="event">
+                        <h3>2023年9月22日</h3>
+                        <p>事件4發生</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-event">
+                <div class="timeline-point"></div>
+                <div class="timeline-content">
+                    <div class="event">
+                        <h3>2023年12月31日</h3>
+                        <p>事件5發生</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column right">
+            <h2>B政黨觀點</h2>
+            <div class="party-event">
+                <div class="event">
+                    <h3>事件1</h3>
+                    <p>B政黨關於事件1的觀點：反對該政策，認為可能會加劇貧富差距。</p>
+                </div>
+                <div class="timeline-line"></div>
+            </div>
+            <div class="party-event">
+                <div class="event">
+                    <h3>事件2</h3>
+                    <p>B政黨關於事件2的觀點...</p>
+                </div>
+                <div class="timeline-line"></div>
+            </div>
+            <div class="party-event">
+                <div class="event">
+                    <h3>事件3</h3>
+                    <p>B政黨關於事件3的觀點...</p>
+                </div>
+                <div class="timeline-line"></div>
+            </div>
+            <div class="party-event">
+                <div class="event">
+                    <h3>事件4</h3>
+                    <p>B政黨關於事件4的觀點...</p>
+                </div>
+                <div class="timeline-line"></div>
+            </div>
+            <div class="party-event">
+                <div class="event">
+                    <h3>事件5</h3>
+                    <p>B政黨關於事件5的觀點...</p>
+                </div>
+                <div class="timeline-line"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const columns = document.querySelectorAll('.column');
+        let isScrolling = false;
+
+        columns.forEach(column => {
+            column.addEventListener('scroll', () => {
+                if (!isScrolling) {
+                    isScrolling = true;
+                    requestAnimationFrame(() => {
+                        columns.forEach(otherColumn => {
+                            if (otherColumn !== column) {
+                                otherColumn.scrollTop = column.scrollTop;
+                            }
+                        });
+                        isScrolling = false;
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
